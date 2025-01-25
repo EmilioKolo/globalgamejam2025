@@ -33,21 +33,25 @@ theme_override_constants/separation = 10
 layout_mode = 2
 size_flags_stretch_ratio = 3.0
 sprite_frame = 12
+button_size = 128
 
 [node name="button2" parent="columns/left_panel1" instance=ExtResource("2_2qk0i")]
 layout_mode = 2
 size_flags_stretch_ratio = 3.0
 sprite_frame = 12
+button_size = 128
 
 [node name="button3" parent="columns/left_panel1" instance=ExtResource("2_2qk0i")]
 layout_mode = 2
 size_flags_stretch_ratio = 3.0
 sprite_frame = 12
+button_size = 128
 
 [node name="button4" parent="columns/left_panel1" instance=ExtResource("2_2qk0i")]
 layout_mode = 2
 size_flags_stretch_ratio = 3.0
 sprite_frame = 12
+button_size = 128
 
 [node name="left_panel2" type="VBoxContainer" parent="columns"]
 layout_mode = 2
@@ -59,25 +63,31 @@ theme_override_constants/separation = 10
 layout_mode = 2
 size_flags_stretch_ratio = 3.0
 sprite_frame = 12
+button_size = 128
 
 [node name="button6" parent="columns/left_panel2" instance=ExtResource("2_2qk0i")]
 layout_mode = 2
 size_flags_stretch_ratio = 3.0
 sprite_frame = 12
+button_size = 128
 
 [node name="button7" parent="columns/left_panel2" instance=ExtResource("2_2qk0i")]
 layout_mode = 2
 size_flags_stretch_ratio = 3.0
 sprite_frame = 12
+button_size = 128
 
 [node name="button8" parent="columns/left_panel2" instance=ExtResource("2_2qk0i")]
 layout_mode = 2
 size_flags_stretch_ratio = 3.0
 sprite_frame = 12
+button_size = 128
 
 [node name="play" parent="columns" instance=ExtResource("2_2qk0i")]
 layout_mode = 2
 size_flags_stretch_ratio = 2.0
+sprite_frame = 6
+button_size = 600
 
 [node name="right_panel1" type="VBoxContainer" parent="columns"]
 layout_mode = 2
@@ -87,8 +97,25 @@ theme_override_constants/separation = 10
 
 [node name="mute" parent="columns/right_panel1" instance=ExtResource("2_2qk0i")]
 layout_mode = 2
-size_flags_stretch_ratio = 3.0
-sprite_frame = 2
+sprite_frame = 8
+button_size = 128
+
+[node name="pad" type="Control" parent="columns/right_panel1"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="colour1" parent="columns/right_panel1" instance=ExtResource("2_2qk0i")]
+layout_mode = 2
+sprite_frame = 12
+
+[node name="colour2" parent="columns/right_panel1" instance=ExtResource("2_2qk0i")]
+layout_mode = 2
+sprite_frame = 12
+
+[node name="colour3" parent="columns/right_panel1" instance=ExtResource("2_2qk0i")]
+layout_mode = 2
+sprite_frame = 12
 
 [node name="right_panel2" type="VBoxContainer" parent="columns"]
 layout_mode = 2
@@ -98,9 +125,34 @@ theme_override_constants/separation = 10
 
 [node name="exit" parent="columns/right_panel2" instance=ExtResource("2_2qk0i")]
 layout_mode = 2
-size_flags_stretch_ratio = 3.0
-sprite_frame = 1
+sprite_frame = 7
+button_size = 128
 
+[node name="pad" type="Control" parent="columns/right_panel2"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="colour4" parent="columns/right_panel2" instance=ExtResource("2_2qk0i")]
+layout_mode = 2
+sprite_frame = 12
+
+[node name="colour5" parent="columns/right_panel2" instance=ExtResource("2_2qk0i")]
+layout_mode = 2
+sprite_frame = 12
+
+[node name="colour6" parent="columns/right_panel2" instance=ExtResource("2_2qk0i")]
+layout_mode = 2
+sprite_frame = 12
+
+[connection signal="pressed" from="columns/left_panel1/button1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="columns/left_panel1/button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="columns/left_panel1/button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="columns/left_panel1/button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="columns/left_panel2/button5" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="columns/left_panel2/button6" to="." method="_on_button_6_pressed"]
+[connection signal="pressed" from="columns/left_panel2/button7" to="." method="_on_button_7_pressed"]
+[connection signal="pressed" from="columns/left_panel2/button8" to="." method="_on_button_8_pressed"]
 [connection signal="pressed" from="columns/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="columns/right_panel1/mute" to="." method="_on_mute_pressed"]
 [connection signal="pressed" from="columns/right_panel2/exit" to="." method="_on_exit_pressed"]

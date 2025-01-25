@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c1uimetmcmv8s"]
+[gd_scene load_steps=3 format=3 uid="uid://c1uimetmcmv8s"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_seq3b"]
+[ext_resource type="PackedScene" uid="uid://bcrqqi76p6yg5" path="res://scenes/responsive_touch.tscn" id="2_ykisa"]
 
 [node name="game" type="Control"]
 layout_mode = 3
@@ -22,12 +23,335 @@ grow_vertical = 2
 [node name="left_panel" type="VBoxContainer" parent="columns"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="title" type="HBoxContainer" parent="columns/left_panel"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 2
+
+[node name="name" type="Label" parent="columns/left_panel/title"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "        "
+vertical_alignment = 1
+
+[node name="responsive_touch" parent="columns/left_panel/title" instance=ExtResource("2_ykisa")]
+layout_mode = 2
+
+[node name="cost" type="Label" parent="columns/left_panel/title"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Cost"
+vertical_alignment = 1
+
+[node name="pop_upgrade" type="HBoxContainer" parent="columns/left_panel"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 2
+
+[node name="Label" type="Label" parent="columns/left_panel/pop_upgrade"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Pop!"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="plus" parent="columns/left_panel/pop_upgrade" instance=ExtResource("2_ykisa")]
+layout_mode = 2
+sprite_frame = 9
+button_size = 96
+
+[node name="cost" type="Label" parent="columns/left_panel/pop_upgrade"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "10"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="auto_upgrade" type="HBoxContainer" parent="columns/left_panel"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 2
+
+[node name="Label" type="Label" parent="columns/left_panel/auto_upgrade"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Auto"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="plus" parent="columns/left_panel/auto_upgrade" instance=ExtResource("2_ykisa")]
+layout_mode = 2
+sprite_frame = 9
+button_size = 96
+
+[node name="cost" type="Label" parent="columns/left_panel/auto_upgrade"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "100"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="size_upgrade" type="HBoxContainer" parent="columns/left_panel"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 2
+
+[node name="Label" type="Label" parent="columns/left_panel/size_upgrade"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Size"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="plus" parent="columns/left_panel/size_upgrade" instance=ExtResource("2_ykisa")]
+layout_mode = 2
+sprite_frame = 9
+button_size = 96
+
+[node name="cost" type="Label" parent="columns/left_panel/size_upgrade"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "100"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="reload_upgrade" type="HBoxContainer" parent="columns/left_panel"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 2
+
+[node name="Label" type="Label" parent="columns/left_panel/reload_upgrade"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Reload"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="plus" parent="columns/left_panel/reload_upgrade" instance=ExtResource("2_ykisa")]
+layout_mode = 2
+sprite_frame = 9
+button_size = 96
+
+[node name="cost" type="Label" parent="columns/left_panel/reload_upgrade"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "25"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="pop_counter" type="HBoxContainer" parent="columns/left_panel"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="columns/left_panel/pop_counter"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Pops: "
+vertical_alignment = 1
+
+[node name="pop_counter_total" type="HBoxContainer" parent="columns/left_panel"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="columns/left_panel/pop_counter_total"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "TOTAL: "
+vertical_alignment = 1
 
 [node name="game_panel" type="Control" parent="columns"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 5.0
 
+[node name="bubble_grid" type="GridContainer" parent="columns/game_panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 5
+
+[node name="bubble1" parent="columns/game_panel/bubble_grid" instance=ExtResource("2_ykisa")]
+layout_mode = 2
+sprite_frame = 12
+
+[node name="bubble2" parent="columns/game_panel/bubble_grid" instance=ExtResource("2_ykisa")]
+layout_mode = 2
+sprite_frame = 12
+
+[node name="bubble3" parent="columns/game_panel/bubble_grid" instance=ExtResource("2_ykisa")]
+layout_mode = 2
+sprite_frame = 12
+
+[node name="bubble4" parent="columns/game_panel/bubble_grid" instance=ExtResource("2_ykisa")]
+layout_mode = 2
+sprite_frame = 12
+
+[node name="bubble5" parent="columns/game_panel/bubble_grid" instance=ExtResource("2_ykisa")]
+layout_mode = 2
+sprite_frame = 12
+
+[node name="bubble6" parent="columns/game_panel/bubble_grid" instance=ExtResource("2_ykisa")]
+layout_mode = 2
+sprite_frame = 12
+
+[node name="bubble7" parent="columns/game_panel/bubble_grid" instance=ExtResource("2_ykisa")]
+layout_mode = 2
+sprite_frame = 12
+
+[node name="bubble8" parent="columns/game_panel/bubble_grid" instance=ExtResource("2_ykisa")]
+layout_mode = 2
+sprite_frame = 12
+
+[node name="bubble9" parent="columns/game_panel/bubble_grid" instance=ExtResource("2_ykisa")]
+layout_mode = 2
+sprite_frame = 12
+
+[node name="bubble10" parent="columns/game_panel/bubble_grid" instance=ExtResource("2_ykisa")]
+layout_mode = 2
+sprite_frame = 12
+
+[node name="bubble11" parent="columns/game_panel/bubble_grid" instance=ExtResource("2_ykisa")]
+layout_mode = 2
+sprite_frame = 12
+
+[node name="bubble12" parent="columns/game_panel/bubble_grid" instance=ExtResource("2_ykisa")]
+layout_mode = 2
+sprite_frame = 12
+
+[node name="bubble13" parent="columns/game_panel/bubble_grid" instance=ExtResource("2_ykisa")]
+layout_mode = 2
+sprite_frame = 12
+
+[node name="bubble14" parent="columns/game_panel/bubble_grid" instance=ExtResource("2_ykisa")]
+layout_mode = 2
+sprite_frame = 12
+
+[node name="bubble15" parent="columns/game_panel/bubble_grid" instance=ExtResource("2_ykisa")]
+layout_mode = 2
+sprite_frame = 12
+
+[node name="bubble16" parent="columns/game_panel/bubble_grid" instance=ExtResource("2_ykisa")]
+layout_mode = 2
+sprite_frame = 12
+
+[node name="bubble17" parent="columns/game_panel/bubble_grid" instance=ExtResource("2_ykisa")]
+layout_mode = 2
+sprite_frame = 12
+
+[node name="bubble18" parent="columns/game_panel/bubble_grid" instance=ExtResource("2_ykisa")]
+layout_mode = 2
+sprite_frame = 12
+
+[node name="bubble19" parent="columns/game_panel/bubble_grid" instance=ExtResource("2_ykisa")]
+layout_mode = 2
+sprite_frame = 12
+
+[node name="bubble20" parent="columns/game_panel/bubble_grid" instance=ExtResource("2_ykisa")]
+layout_mode = 2
+sprite_frame = 12
+
+[node name="bubble21" parent="columns/game_panel/bubble_grid" instance=ExtResource("2_ykisa")]
+layout_mode = 2
+sprite_frame = 12
+
+[node name="bubble22" parent="columns/game_panel/bubble_grid" instance=ExtResource("2_ykisa")]
+layout_mode = 2
+sprite_frame = 12
+
+[node name="bubble23" parent="columns/game_panel/bubble_grid" instance=ExtResource("2_ykisa")]
+layout_mode = 2
+sprite_frame = 12
+
+[node name="bubble24" parent="columns/game_panel/bubble_grid" instance=ExtResource("2_ykisa")]
+layout_mode = 2
+sprite_frame = 12
+
+[node name="bubble25" parent="columns/game_panel/bubble_grid" instance=ExtResource("2_ykisa")]
+layout_mode = 2
+sprite_frame = 12
+
 [node name="right_panel" type="VBoxContainer" parent="columns"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="exit_mute" type="HBoxContainer" parent="columns/right_panel"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="mute" parent="columns/right_panel/exit_mute" instance=ExtResource("2_ykisa")]
+layout_mode = 2
+sprite_frame = 8
+
+[node name="exit" parent="columns/right_panel/exit_mute" instance=ExtResource("2_ykisa")]
+layout_mode = 2
+sprite_frame = 7
+
+[node name="pad" type="Control" parent="columns/right_panel"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="colors1" type="HBoxContainer" parent="columns/right_panel"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="color1" parent="columns/right_panel/colors1" instance=ExtResource("2_ykisa")]
+layout_mode = 2
+sprite_frame = 12
+
+[node name="color4" parent="columns/right_panel/colors1" instance=ExtResource("2_ykisa")]
+layout_mode = 2
+sprite_frame = 12
+
+[node name="colors2" type="HBoxContainer" parent="columns/right_panel"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="color2" parent="columns/right_panel/colors2" instance=ExtResource("2_ykisa")]
+layout_mode = 2
+sprite_frame = 12
+
+[node name="color5" parent="columns/right_panel/colors2" instance=ExtResource("2_ykisa")]
+layout_mode = 2
+sprite_frame = 12
+
+[node name="colors3" type="HBoxContainer" parent="columns/right_panel"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="color3" parent="columns/right_panel/colors3" instance=ExtResource("2_ykisa")]
+layout_mode = 2
+sprite_frame = 12
+
+[node name="color6" parent="columns/right_panel/colors3" instance=ExtResource("2_ykisa")]
+layout_mode = 2
+sprite_frame = 12
+
+[connection signal="pressed" from="columns/right_panel/exit_mute/mute" to="." method="_on_mute_pressed"]
+[connection signal="pressed" from="columns/right_panel/exit_mute/exit" to="." method="_on_exit_pressed"]
