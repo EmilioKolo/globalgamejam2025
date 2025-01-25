@@ -18,7 +18,7 @@ signal buy_attempt(node)
 @export var buy_button:bool = false
 
 var reload_timer:float = .1
-var enabled = true
+@export var enabled:bool = true
 
 const RESPONSIVE_SIZE = true
 

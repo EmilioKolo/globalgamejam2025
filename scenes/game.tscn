@@ -41,6 +41,8 @@ vertical_alignment = 1
 
 [node name="upgrade_n" parent="columns/left_panel/title" instance=ExtResource("2_ykisa")]
 layout_mode = 2
+sprite_frame = 29
+enabled = false
 
 [node name="cost" type="Label" parent="columns/left_panel/title"]
 layout_mode = 2

@@ -53,8 +53,10 @@ func add_autopopper():
 	auto_node.add_child(timer)
 
 func autopop():
+	var l_bub = bubble_grid_node.get_children()
+	l_bub.shuffle()
 	# Go through bubbles in bubble_grid_node
-	for bub in bubble_grid_node.get_children():
+	for bub in l_bub:
 		# Check that bubble is enabled
 		if bub.enabled:
 			# Check if there are queued_autopops
