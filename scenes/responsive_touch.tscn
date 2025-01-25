@@ -1,11 +1,97 @@
-[gd_scene load_steps=4 format=3 uid="uid://bcrqqi76p6yg5"]
+[gd_scene load_steps=15 format=3 uid="uid://bcrqqi76p6yg5"]
 
 [ext_resource type="Script" path="res://scripts/responsive_touch.gd" id="1_4vqoy"]
 [ext_resource type="Texture2D" uid="uid://63jkkdmg0suy" path="res://assets/bubble_all.png" id="2_b6n30"]
+[ext_resource type="AudioStream" uid="uid://c6aemd2m5mee4" path="res://assets/pop1_nr_cut.mp3" id="3_gpue8"]
+[ext_resource type="AudioStream" uid="uid://cavys1re1vlyl" path="res://assets/pop2_nr_cut.mp3" id="4_lj4hb"]
+[ext_resource type="AudioStream" uid="uid://cdro7imnh7b2k" path="res://assets/pop3_nr_cut.mp3" id="5_3fth1"]
+[ext_resource type="AudioStream" uid="uid://dfbu6w05ec6kg" path="res://assets/pop5_nr_cut.mp3" id="6_4477t"]
+[ext_resource type="AudioStream" uid="uid://ecc6q4wmbcjg" path="res://assets/pop6_nr_cut.mp3" id="7_1wvy2"]
+[ext_resource type="AudioStream" uid="uid://dli1j4bcaaa43" path="res://assets/pop4_nr_cut.mp3" id="8_fb56b"]
+[ext_resource type="AudioStream" uid="uid://bp2facb0drlcj" path="res://assets/pop7_nr_cut.mp3" id="9_86ir1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xx0hs"]
 resource_local_to_scene = true
 radius = 58.0
+
+[sub_resource type="Animation" id="Animation_bss1h"]
+resource_name = "pop"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("button_anchor/sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [20, 22, 29]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"_disable"
+}, {
+"args": [],
+"method": &"popped"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_sko8v"]
+resource_name = "return"
+length = 0.1
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_enable"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1rc2i"]
+_data = {
+"pop": SubResource("Animation_bss1h"),
+"return": SubResource("Animation_sko8v")
+}
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_mnhj0"]
+streams_count = 7
+stream_0/stream = ExtResource("3_gpue8")
+stream_1/stream = ExtResource("4_lj4hb")
+stream_2/stream = ExtResource("5_3fth1")
+stream_3/stream = ExtResource("6_4477t")
+stream_4/stream = ExtResource("7_1wvy2")
+stream_5/stream = ExtResource("8_fb56b")
+stream_6/stream = ExtResource("9_86ir1")
 
 [node name="responsive_touch" type="Control"]
 layout_mode = 3
@@ -27,11 +113,11 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="sprite" type="Sprite2D" parent="button_anchor"]
-scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_b6n30")
 centered = false
 hframes = 6
 vframes = 5
+frame = 12
 
 [node name="touch_button" type="TouchScreenButton" parent="button_anchor"]
 position = Vector2(64, 64)
@@ -46,5 +132,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_1rc2i")
+}
+autoplay = "return"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_mnhj0")
 
 [connection signal="pressed" from="button_anchor/touch_button" to="." method="_on_touch_button_pressed"]

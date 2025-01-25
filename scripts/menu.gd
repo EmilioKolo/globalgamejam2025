@@ -2,11 +2,12 @@ extends Control
 
 
 var code = ''
+const CORRECT_CODE = '466854'
 
 func _ready() -> void:
 	SignalBus.resize_screen.emit()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	SignalBus.resize_screen.emit()
 
 func change_scene(scene_name):
@@ -15,17 +16,18 @@ func change_scene(scene_name):
 
 func button_clicked(n):
 	code = code+str(n)
-	if len(code)==6:
-		if code=='466854':
-			enable_cheat()
+	if len(code)>=len(CORRECT_CODE):
+		if code==CORRECT_CODE:
+			enable_cheats()
 			code = ''
 		else:
 			print('Code '+code+' is incorrect.')
 			code = ''
 
-func enable_cheat():
+func enable_cheats():
 	print('Code is correct!')
-	pass
+	Global.pop_total = 999999999
+	Global.pop_unspent = 999999999
 
 func change_color(newcolor_base, newcolor_accent):
 	RenderingServer.set_default_clear_color(newcolor_base)
@@ -38,7 +40,6 @@ func _on_exit_pressed() -> void:
 
 func _on_mute_pressed() -> void:
 	Global.toggle_mute()
-
 
 func _on_button_1_pressed() -> void:
 	button_clicked(1)
