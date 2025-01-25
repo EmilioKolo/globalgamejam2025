@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1uimetmcmv8s"]
+
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_seq3b"]
+
+[node name="game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_seq3b")
+
+[node name="columns" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="left_panel" type="VBoxContainer" parent="columns"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="game_panel" type="Control" parent="columns"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.0
+
+[node name="right_panel" type="VBoxContainer" parent="columns"]
+layout_mode = 2
+size_flags_horizontal = 3

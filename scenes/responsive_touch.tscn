@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcrqqi76p6yg5"]
+
+[ext_resource type="Script" path="res://scripts/responsive_touch.gd" id="1_4vqoy"]
+[ext_resource type="Texture2D" uid="uid://63jkkdmg0suy" path="res://assets/bubble_all.png" id="2_b6n30"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xx0hs"]
+resource_local_to_scene = true
+radius = 58.0
+
+[node name="responsive_touch" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_4vqoy")
+
+[node name="button_anchor" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="sprite" type="Sprite2D" parent="button_anchor"]
+texture = ExtResource("2_b6n30")
+centered = false
+hframes = 6
+vframes = 5
+
+[node name="touch_button" type="TouchScreenButton" parent="button_anchor"]
+position = Vector2(64, 64)
+shape = SubResource("CircleShape2D_xx0hs")
+
+[node name="marker" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[connection signal="pressed" from="button_anchor/touch_button" to="." method="_on_touch_button_pressed"]

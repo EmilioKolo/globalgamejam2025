@@ -1,0 +1,106 @@
+[gd_scene load_steps=3 format=3 uid="uid://k2rhwfhst8y3"]
+
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_34m4c"]
+[ext_resource type="PackedScene" uid="uid://bcrqqi76p6yg5" path="res://scenes/responsive_touch.tscn" id="2_2qk0i"]
+
+[node name="menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_34m4c")
+
+[node name="columns" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="left_panel1" type="VBoxContainer" parent="columns"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_constants/separation = 10
+
+[node name="button1" parent="columns/left_panel1" instance=ExtResource("2_2qk0i")]
+layout_mode = 2
+size_flags_stretch_ratio = 3.0
+sprite_frame = 12
+
+[node name="button2" parent="columns/left_panel1" instance=ExtResource("2_2qk0i")]
+layout_mode = 2
+size_flags_stretch_ratio = 3.0
+sprite_frame = 12
+
+[node name="button3" parent="columns/left_panel1" instance=ExtResource("2_2qk0i")]
+layout_mode = 2
+size_flags_stretch_ratio = 3.0
+sprite_frame = 12
+
+[node name="button4" parent="columns/left_panel1" instance=ExtResource("2_2qk0i")]
+layout_mode = 2
+size_flags_stretch_ratio = 3.0
+sprite_frame = 12
+
+[node name="left_panel2" type="VBoxContainer" parent="columns"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_constants/separation = 10
+
+[node name="button5" parent="columns/left_panel2" instance=ExtResource("2_2qk0i")]
+layout_mode = 2
+size_flags_stretch_ratio = 3.0
+sprite_frame = 12
+
+[node name="button6" parent="columns/left_panel2" instance=ExtResource("2_2qk0i")]
+layout_mode = 2
+size_flags_stretch_ratio = 3.0
+sprite_frame = 12
+
+[node name="button7" parent="columns/left_panel2" instance=ExtResource("2_2qk0i")]
+layout_mode = 2
+size_flags_stretch_ratio = 3.0
+sprite_frame = 12
+
+[node name="button8" parent="columns/left_panel2" instance=ExtResource("2_2qk0i")]
+layout_mode = 2
+size_flags_stretch_ratio = 3.0
+sprite_frame = 12
+
+[node name="play" parent="columns" instance=ExtResource("2_2qk0i")]
+layout_mode = 2
+size_flags_stretch_ratio = 2.0
+
+[node name="right_panel1" type="VBoxContainer" parent="columns"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_constants/separation = 10
+
+[node name="mute" parent="columns/right_panel1" instance=ExtResource("2_2qk0i")]
+layout_mode = 2
+size_flags_stretch_ratio = 3.0
+sprite_frame = 2
+
+[node name="right_panel2" type="VBoxContainer" parent="columns"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_constants/separation = 10
+
+[node name="exit" parent="columns/right_panel2" instance=ExtResource("2_2qk0i")]
+layout_mode = 2
+size_flags_stretch_ratio = 3.0
+sprite_frame = 1
+
+[connection signal="pressed" from="columns/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="columns/right_panel1/mute" to="." method="_on_mute_pressed"]
+[connection signal="pressed" from="columns/right_panel2/exit" to="." method="_on_exit_pressed"]
