@@ -13,7 +13,6 @@ config_version=5
 config/name="GlobalGameJam2025"
 run/main_scene="res://scenes/menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-boot_splash/bg_color=Color(0.631515, 0.556975, 0.318305, 1)
 config/icon="res://icon.svg"
 
 [autoload]
