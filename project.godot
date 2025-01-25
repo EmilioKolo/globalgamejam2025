@@ -13,7 +13,7 @@ config_version=5
 config/name="GlobalGameJam2025"
 run/main_scene="res://scenes/menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://bubble_icon.png"
 
 [autoload]
 
@@ -24,7 +24,7 @@ SignalBus="*res://scripts/signal_bus.gd"
 
 window/size/viewport_width=2560
 window/size/viewport_height=1440
-window/size/mode=2
+window/size/mode=3
 
 [input_devices]
 
@@ -34,4 +34,5 @@ pointing/emulate_touch_from_mouse=true
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
 environment/defaults/default_clear_color=Color(1, 1, 1, 1)

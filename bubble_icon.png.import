@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cc1gcgoadi1jn"
-path="res://.godot/imported/cruz2.png-24e2675fcaf2ee9c166f359cc0a9f460.ctex"
+uid="uid://voog22vms016"
+path="res://.godot/imported/bubble_icon.png-e316f9fd783cb72c609d02d492a67aef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cruz2.png"
-dest_files=["res://.godot/imported/cruz2.png-24e2675fcaf2ee9c166f359cc0a9f460.ctex"]
+source_file="res://bubble_icon.png"
+dest_files=["res://.godot/imported/bubble_icon.png-e316f9fd783cb72c609d02d492a67aef.ctex"]
 
 [params]
 
