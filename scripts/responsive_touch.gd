@@ -39,6 +39,12 @@ func popped():
 	timer.autostart = true
 	# Add timer as child
 	self.add_child(timer)
+	# Change color if modulate is different from white
+	if modulate.r!=1 or modulate.g!=1 or modulate.b!=1:
+		if RenderingServer.get_default_clear_color()==modulate:
+			RenderingServer.set_default_clear_color(Color.WHITE)
+		else:
+			RenderingServer.set_default_clear_color(modulate)
 
 func scale_button():
 	# Pick the smallest side of anchor_node as the button size
