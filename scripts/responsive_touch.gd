@@ -28,6 +28,7 @@ func _ready() -> void:
 
 
 func popped():
+	# Emit signal
 	pressed.emit()
 	# Create timer and set up values
 	var timer = Timer.new()
@@ -45,6 +46,8 @@ func popped():
 			RenderingServer.set_default_clear_color(Color.WHITE)
 		else:
 			RenderingServer.set_default_clear_color(modulate)
+	# Vibrate phone
+	Input.vibrate_handheld(100)
 
 func scale_button():
 	# Pick the smallest side of anchor_node as the button size
