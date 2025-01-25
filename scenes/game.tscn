@@ -275,10 +275,12 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="color1" parent="columns/right_panel/colors1" instance=ExtResource("2_ykisa")]
+modulate = Color(1, 0, 0, 1)
 layout_mode = 2
 sprite_frame = 12
 
 [node name="color4" parent="columns/right_panel/colors1" instance=ExtResource("2_ykisa")]
+modulate = Color(0, 0, 1, 1)
 layout_mode = 2
 sprite_frame = 12
 
@@ -287,10 +289,12 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="color2" parent="columns/right_panel/colors2" instance=ExtResource("2_ykisa")]
+modulate = Color(0, 1, 0, 1)
 layout_mode = 2
 sprite_frame = 12
 
 [node name="color5" parent="columns/right_panel/colors2" instance=ExtResource("2_ykisa")]
+modulate = Color(0, 1, 1, 1)
 layout_mode = 2
 sprite_frame = 12
 
@@ -299,10 +303,12 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="color3" parent="columns/right_panel/colors3" instance=ExtResource("2_ykisa")]
+modulate = Color(1, 1, 0, 1)
 layout_mode = 2
 sprite_frame = 12
 
 [node name="color6" parent="columns/right_panel/colors3" instance=ExtResource("2_ykisa")]
+modulate = Color(1, 0, 1, 1)
 layout_mode = 2
 sprite_frame = 12
 
