@@ -34,11 +34,49 @@ size_flags_stretch_ratio = 3.0
 sprite_frame = 12
 button_size = 128
 
+[node name="Label1" type="Label" parent="columns/left_panel1/button1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 80
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="button2" parent="columns/left_panel1" instance=ExtResource("2_2qk0i")]
 layout_mode = 2
 size_flags_stretch_ratio = 3.0
 sprite_frame = 12
 button_size = 128
+
+[node name="Label2" type="Label" parent="columns/left_panel1/button2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -55.0
+offset_right = 23.0
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 80
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="button3" parent="columns/left_panel1" instance=ExtResource("2_2qk0i")]
 layout_mode = 2
@@ -46,11 +84,49 @@ size_flags_stretch_ratio = 3.0
 sprite_frame = 12
 button_size = 128
 
+[node name="Label3" type="Label" parent="columns/left_panel1/button3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -55.0
+offset_right = 23.0
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 80
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="button4" parent="columns/left_panel1" instance=ExtResource("2_2qk0i")]
 layout_mode = 2
 size_flags_stretch_ratio = 3.0
 sprite_frame = 12
 button_size = 128
+
+[node name="Label4" type="Label" parent="columns/left_panel1/button4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -55.0
+offset_right = 23.0
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 80
+text = "4"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="left_panel2" type="VBoxContainer" parent="columns"]
 layout_mode = 2
@@ -63,11 +139,49 @@ size_flags_stretch_ratio = 3.0
 sprite_frame = 12
 button_size = 128
 
+[node name="Label5" type="Label" parent="columns/left_panel2/button5"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -55.0
+offset_right = 23.0
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 80
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="button6" parent="columns/left_panel2" instance=ExtResource("2_2qk0i")]
 layout_mode = 2
 size_flags_stretch_ratio = 3.0
 sprite_frame = 12
 button_size = 128
+
+[node name="Label6" type="Label" parent="columns/left_panel2/button6"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -55.0
+offset_right = 23.0
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 80
+text = "6"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="button7" parent="columns/left_panel2" instance=ExtResource("2_2qk0i")]
 layout_mode = 2
@@ -75,11 +189,49 @@ size_flags_stretch_ratio = 3.0
 sprite_frame = 12
 button_size = 128
 
+[node name="Label7" type="Label" parent="columns/left_panel2/button7"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -55.0
+offset_right = 23.0
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 80
+text = "7"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="button8" parent="columns/left_panel2" instance=ExtResource("2_2qk0i")]
 layout_mode = 2
 size_flags_stretch_ratio = 3.0
 sprite_frame = 12
 button_size = 128
+
+[node name="Label8" type="Label" parent="columns/left_panel2/button8"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -55.0
+offset_right = 23.0
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 80
+text = "8"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="play" parent="columns" instance=ExtResource("2_2qk0i")]
 layout_mode = 2
@@ -103,14 +255,17 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 0.5
 
 [node name="colour1" parent="columns/right_panel1" instance=ExtResource("2_2qk0i")]
+modulate = Color(1, 0, 0, 1)
 layout_mode = 2
 sprite_frame = 12
 
 [node name="colour2" parent="columns/right_panel1" instance=ExtResource("2_2qk0i")]
+modulate = Color(0, 1, 0, 1)
 layout_mode = 2
 sprite_frame = 12
 
 [node name="colour3" parent="columns/right_panel1" instance=ExtResource("2_2qk0i")]
+modulate = Color(1, 1, 0, 1)
 layout_mode = 2
 sprite_frame = 12
 
@@ -130,14 +285,17 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 0.5
 
 [node name="colour4" parent="columns/right_panel2" instance=ExtResource("2_2qk0i")]
+modulate = Color(0, 0, 1, 1)
 layout_mode = 2
 sprite_frame = 12
 
 [node name="colour5" parent="columns/right_panel2" instance=ExtResource("2_2qk0i")]
+modulate = Color(0, 1, 1, 1)
 layout_mode = 2
 sprite_frame = 12
 
 [node name="colour6" parent="columns/right_panel2" instance=ExtResource("2_2qk0i")]
+modulate = Color(1, 0, 1, 1)
 layout_mode = 2
 sprite_frame = 12
 

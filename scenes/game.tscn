@@ -26,6 +26,48 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
 
+[node name="pop_counter" type="HBoxContainer" parent="columns/left_panel"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="columns/left_panel/pop_counter"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = " Pops: "
+vertical_alignment = 1
+
+[node name="pops" type="Label" parent="columns/left_panel/pop_counter"]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "0"
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="pop_counter_total" type="HBoxContainer" parent="columns/left_panel"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="columns/left_panel/pop_counter_total"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = " Total: "
+vertical_alignment = 1
+
+[node name="pops" type="Label" parent="columns/left_panel/pop_counter_total"]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "0"
+vertical_alignment = 1
+autowrap_mode = 1
+
 [node name="title" type="HBoxContainer" parent="columns/left_panel"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -174,48 +216,6 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 text = "25"
 horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 1
-
-[node name="pop_counter" type="HBoxContainer" parent="columns/left_panel"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Label" type="Label" parent="columns/left_panel/pop_counter"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 36
-text = " Pops: "
-vertical_alignment = 1
-
-[node name="pops" type="Label" parent="columns/left_panel/pop_counter"]
-custom_minimum_size = Vector2(100, 40)
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 40
-text = "0"
-vertical_alignment = 1
-autowrap_mode = 1
-
-[node name="pop_counter_total" type="HBoxContainer" parent="columns/left_panel"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Label" type="Label" parent="columns/left_panel/pop_counter_total"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 36
-text = " Total: "
-vertical_alignment = 1
-
-[node name="pops" type="Label" parent="columns/left_panel/pop_counter_total"]
-custom_minimum_size = Vector2(100, 40)
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 40
-text = "0"
 vertical_alignment = 1
 autowrap_mode = 1
 
