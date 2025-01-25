@@ -1,10 +1,14 @@
 extends Control
 
 
+@onready var exit_button_node = $columns/right_panel2/exit
+
 var code = ''
 const CORRECT_CODE = '466854'
 
 func _ready() -> void:
+	if OS.get_name().to_lower()=="web":
+		exit_button_node.enabled = false
 	SignalBus.resize_screen.emit()
 
 func _process(_delta: float) -> void:
