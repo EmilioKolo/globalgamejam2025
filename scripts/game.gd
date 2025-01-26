@@ -104,14 +104,14 @@ func update_bubble_options():
 
 func update_labels():
 	# Update number of pops
-	pops_label.text = str(Global.pop_unspent)
-	total_label.text = str(Global.pop_total)
+	pops_label.text = Global.shorten(Global.pop_unspent)
+	total_label.text = Global.shorten(Global.pop_total)
 	# Update costs of upgrades
-	pop_val_cost_label.text = str(Global.pop_val_cost)
-	auto_up_label.text = str(Global.auto_cost)
-	auto_sp_up_label.text = str(Global.auto_sp_cost)
-	size_up_label.text = str(Global.grid_size_cost)
-	reload_up_label.text = str(Global.reload_cost)
+	pop_val_cost_label.text = Global.shorten(Global.pop_val_cost)
+	auto_up_label.text = Global.shorten(Global.auto_cost)
+	auto_sp_up_label.text = Global.shorten(Global.auto_sp_cost)
+	size_up_label.text = Global.shorten(Global.grid_size_cost)
+	reload_up_label.text = Global.shorten(Global.reload_cost)
 
 func back_to_menu():
 	get_tree().change_scene_to_file("res://scenes/menu.tscn")

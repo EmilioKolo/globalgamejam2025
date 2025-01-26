@@ -89,6 +89,39 @@ func buy_reload_upgrade():
 	# Increase reload_cost
 	reload_cost = cost_increase(reload_cost)
 
+func shorten(n):
+	# Define number and modifier variables
+	var num = ''
+	var mod = ''
+	# Define length of number n
+	var len_n = len(str(int(n)))
+	# If the number is lower than 10k
+	if len_n<=4:
+		num = str(n)
+		mod = ''
+	# If the number is lower than 10m
+	elif len_n<=7:
+		num = str(n).substr(0,len_n-3)
+		mod = 'k'
+	# If the number is lower than 10b
+	elif len_n<=10:
+		num = str(n).substr(0,len_n-6)
+		mod = 'm'
+	# If the number is lower than 10t
+	elif len_n<=13:
+		num = str(n).substr(0,len_n-9)
+		mod = 'b'
+	# If the number is lower than 10q
+	elif len_n<=16:
+		num = str(n).substr(0,len_n-12)
+		mod = 't'
+	# If the number is bigger than 10q, I use scientific notation
+	else:
+		num = str(n)[0]+'.'+str(n).substr(1,2)
+		mod = 'e'+str(len_n-1)
+	var ret = str(num)+str(mod)
+	return ret
+
 func cost_increase(n, mult=1.5):
 	return int(mult*n)
 
