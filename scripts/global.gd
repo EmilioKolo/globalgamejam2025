@@ -7,17 +7,19 @@ var mute_bool = false
 var pop_total:int = 0
 var pop_unspent:int = 0
 var pop_value:int = 1
-var grid_size:Vector2 = Vector2(3,3)
+var grid_size:Vector2 = Vector2(4,4)
 var reload_freq = 2.0
 var reload_timer = 10.0/reload_freq
 # Upgrade costs
 var pop_val_cost = 10
-var auto_cost = 100
+var auto_cost = 10
+var auto_sp_cost = 100
 var grid_size_cost = 100
 var reload_cost = 25
 # Autopopper
 var autopopper_counter = 0
-var autopopper_timer = 2.0
+var autopopper_freq = 5.0
+var autopopper_timer = 10.0/autopopper_freq
 
 
 func toggle_mute():
@@ -51,6 +53,16 @@ func buy_auto_upgrade():
 	# Increase auto_cost
 	auto_cost = cost_increase(auto_cost)
 
+func buy_auto_sp_upgrade():
+	# Spend pops
+	pop_unspent = pop_unspent - auto_sp_cost
+	# Increase frequency
+	autopopper_freq += 1
+	# Recalculate speed
+	autopopper_timer = 10.0/autopopper_freq
+	# Increase auto_cost
+	auto_sp_cost = cost_increase(auto_sp_cost)
+
 func buy_size_upgrade():
 	# Spend pops
 	pop_unspent = pop_unspent - grid_size_cost
@@ -60,7 +72,7 @@ func buy_size_upgrade():
 	else:
 		grid_size.x+=1
 	# Increase grid_size_cost
-	grid_size_cost = cost_increase(grid_size_cost)
+	grid_size_cost = cost_increase(grid_size_cost, 10)
 
 func buy_reload_upgrade():
 	# Spend pops
@@ -72,8 +84,8 @@ func buy_reload_upgrade():
 	# Increase reload_cost
 	reload_cost = cost_increase(reload_cost)
 
-func cost_increase(n):
-	return int(1.5*n)
+func cost_increase(n, mult=1.5):
+	return int(mult*n)
 
 func load_game():
 	pass

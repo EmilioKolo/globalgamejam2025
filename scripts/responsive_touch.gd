@@ -46,8 +46,6 @@ func popped():
 			RenderingServer.set_default_clear_color(Color.WHITE)
 		else:
 			RenderingServer.set_default_clear_color(modulate)
-	# Vibrate phone
-	Input.vibrate_handheld(100)
 
 func scale_button():
 	# Pick the smallest side of anchor_node as the button size
@@ -105,6 +103,10 @@ func _enable():
 
 func _disable():
 	enabled = false
+
+func _vibrate():
+	# Vibrate phone or handheld
+	Input.vibrate_handheld(200)
 
 func _on_touch_button_pressed() -> void:
 	if enabled:

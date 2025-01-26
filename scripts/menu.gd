@@ -2,13 +2,13 @@ extends Control
 
 
 @onready var exit_button_node = $columns/right_panel2/exit
+@onready var debug_label = $columns/right_panel1/pad/debug_label
 
 var code = ''
 const CORRECT_CODE = '466854'
 
 func _ready() -> void:
-	if OS.get_name().to_lower()=="web":
-		exit_button_node.enabled = false
+	_flash_message(OS.get_name().to_lower())
 	SignalBus.resize_screen.emit()
 
 func _process(_delta: float) -> void:
@@ -25,16 +25,37 @@ func button_clicked(n):
 			enable_cheats()
 			code = ''
 		else:
-			print('Code '+code+' is incorrect.')
+			_flash_message(code)
 			code = ''
 
 func enable_cheats():
-	print('Code is correct!')
+	_flash_message('Cheats enabled')
 	Global.pop_total = 999999999
 	Global.pop_unspent = 999999999
 
 func change_color(newcolor_base, newcolor_accent):
 	RenderingServer.set_default_clear_color(newcolor_base)
+
+func _flash_message(text):
+	# Remove all previous timers
+	for t in debug_label.get_children():
+		t.queue_free()
+	# Change debut_label text
+	debug_label.text = str(text)
+	# Create timer and set up values
+	var timer = Timer.new()
+	timer.wait_time = 5.0
+	timer.one_shot = true
+	# Connect timer timeout to queue_autopop
+	timer.connect("timeout", _delete_message)
+	timer.connect("timeout", timer.queue_free)
+	# Start timer
+	timer.autostart = true
+	# Add timer as child to auto_node
+	debug_label.add_child(timer)
+
+func _delete_message():
+	debug_label.text = ''
 
 func _on_play_pressed() -> void:
 	change_scene('play')

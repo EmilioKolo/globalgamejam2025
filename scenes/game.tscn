@@ -68,46 +68,21 @@ text = "0"
 vertical_alignment = 1
 autowrap_mode = 1
 
-[node name="title" type="HBoxContainer" parent="columns/left_panel"]
-layout_mode = 2
-size_flags_vertical = 3
-alignment = 2
-
-[node name="name" type="Label" parent="columns/left_panel/title"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 40
-text = "        "
-vertical_alignment = 1
-
-[node name="upgrade_n" parent="columns/left_panel/title" instance=ExtResource("2_ykisa")]
-layout_mode = 2
-sprite_frame = 29
-enabled = false
-
-[node name="cost" type="Label" parent="columns/left_panel/title"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 40
-text = "Cost "
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="pop_upgrade" type="HBoxContainer" parent="columns/left_panel"]
 layout_mode = 2
 size_flags_vertical = 3
 alignment = 2
 
 [node name="Label" type="Label" parent="columns/left_panel/pop_upgrade"]
+custom_minimum_size = Vector2(100, 40)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
-text = " Pop!"
+text = " Profit"
 horizontal_alignment = 2
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="pop_up" parent="columns/left_panel/pop_upgrade" instance=ExtResource("2_ykisa")]
 layout_mode = 2
@@ -132,6 +107,7 @@ size_flags_vertical = 3
 alignment = 2
 
 [node name="Label" type="Label" parent="columns/left_panel/auto_upgrade"]
+custom_minimum_size = Vector2(100, 40)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -139,6 +115,7 @@ theme_override_font_sizes/font_size = 40
 text = " Auto"
 horizontal_alignment = 2
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="auto_up" parent="columns/left_panel/auto_upgrade" instance=ExtResource("2_ykisa")]
 layout_mode = 2
@@ -147,6 +124,39 @@ button_size = 96
 buy_button = true
 
 [node name="cost" type="Label" parent="columns/left_panel/auto_upgrade"]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="auto_sp_upgrade" type="HBoxContainer" parent="columns/left_panel"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 2
+
+[node name="Label" type="Label" parent="columns/left_panel/auto_sp_upgrade"]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = " Auto speed"
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="auto_sp_up" parent="columns/left_panel/auto_sp_upgrade" instance=ExtResource("2_ykisa")]
+layout_mode = 2
+sprite_frame = 9
+button_size = 96
+buy_button = true
+
+[node name="cost" type="Label" parent="columns/left_panel/auto_sp_upgrade"]
 custom_minimum_size = Vector2(100, 40)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -163,6 +173,7 @@ size_flags_vertical = 3
 alignment = 2
 
 [node name="Label" type="Label" parent="columns/left_panel/size_upgrade"]
+custom_minimum_size = Vector2(100, 40)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -170,6 +181,7 @@ theme_override_font_sizes/font_size = 40
 text = " Size"
 horizontal_alignment = 2
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="size_up" parent="columns/left_panel/size_upgrade" instance=ExtResource("2_ykisa")]
 layout_mode = 2
@@ -194,6 +206,7 @@ size_flags_vertical = 3
 alignment = 2
 
 [node name="Label" type="Label" parent="columns/left_panel/reload_upgrade"]
+custom_minimum_size = Vector2(100, 40)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -201,6 +214,7 @@ theme_override_font_sizes/font_size = 40
 text = " Reload"
 horizontal_alignment = 2
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="reload_up" parent="columns/left_panel/reload_upgrade" instance=ExtResource("2_ykisa")]
 layout_mode = 2
@@ -275,12 +289,12 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="color1" parent="columns/right_panel/colors1" instance=ExtResource("2_ykisa")]
-modulate = Color(1, 0, 0, 1)
+modulate = Color(0.980392, 0.666667, 0.666667, 1)
 layout_mode = 2
 sprite_frame = 12
 
 [node name="color4" parent="columns/right_panel/colors1" instance=ExtResource("2_ykisa")]
-modulate = Color(0, 0, 1, 1)
+modulate = Color(0.666667, 0.666667, 0.980392, 1)
 layout_mode = 2
 sprite_frame = 12
 
@@ -289,12 +303,12 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="color2" parent="columns/right_panel/colors2" instance=ExtResource("2_ykisa")]
-modulate = Color(0, 1, 0, 1)
+modulate = Color(0.666667, 0.980392, 0.666667, 1)
 layout_mode = 2
 sprite_frame = 12
 
 [node name="color5" parent="columns/right_panel/colors2" instance=ExtResource("2_ykisa")]
-modulate = Color(0, 1, 1, 1)
+modulate = Color(0.666667, 0.980392, 0.980392, 1)
 layout_mode = 2
 sprite_frame = 12
 
@@ -303,28 +317,29 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="color3" parent="columns/right_panel/colors3" instance=ExtResource("2_ykisa")]
-modulate = Color(1, 1, 0, 1)
+modulate = Color(0.980392, 0.980392, 0.666667, 1)
 layout_mode = 2
 sprite_frame = 12
 
 [node name="color6" parent="columns/right_panel/colors3" instance=ExtResource("2_ykisa")]
-modulate = Color(1, 0, 1, 1)
+modulate = Color(0.980392, 0.666667, 0.980392, 1)
 layout_mode = 2
 sprite_frame = 12
+
+[node name="autopop_timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
 
 [node name="autopoppers" type="Control" parent="."]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Timer" type="Timer" parent="autopoppers"]
-wait_time = 0.1
-autostart = true
-
 [connection signal="buy_attempt" from="columns/left_panel/pop_upgrade/pop_up" to="." method="_on_pop_up_buy_attempt"]
 [connection signal="buy_attempt" from="columns/left_panel/auto_upgrade/auto_up" to="." method="_on_auto_up_buy_attempt"]
+[connection signal="buy_attempt" from="columns/left_panel/auto_sp_upgrade/auto_sp_up" to="." method="_on_auto_sp_up_buy_attempt"]
 [connection signal="buy_attempt" from="columns/left_panel/size_upgrade/size_up" to="." method="_on_size_up_buy_attempt"]
 [connection signal="buy_attempt" from="columns/left_panel/reload_upgrade/reload_up" to="." method="_on_reload_up_buy_attempt"]
 [connection signal="pressed" from="columns/right_panel/exit_mute/mute" to="." method="_on_mute_pressed"]
 [connection signal="pressed" from="columns/right_panel/exit_mute/exit" to="." method="_on_exit_pressed"]
-[connection signal="timeout" from="autopoppers/Timer" to="." method="autopop"]
+[connection signal="timeout" from="autopop_timer" to="." method="autopop"]

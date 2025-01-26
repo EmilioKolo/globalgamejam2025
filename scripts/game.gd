@@ -6,6 +6,7 @@ extends Control
 @onready var total_label = $columns/left_panel/pop_counter_total/pops
 @onready var pop_val_cost_label = $columns/left_panel/pop_upgrade/cost
 @onready var auto_up_label = $columns/left_panel/auto_upgrade/cost
+@onready var auto_sp_up_label = $columns/left_panel/auto_sp_upgrade/cost
 @onready var size_up_label = $columns/left_panel/size_upgrade/cost
 @onready var reload_up_label = $columns/left_panel/reload_upgrade/cost
 @onready var auto_node = $autopoppers
@@ -39,6 +40,12 @@ func update_autopopper():
 		add_autopopper()
 		# Count the new autopopper
 		curr_autopoppers += 1
+
+func update_autopopper_timer():
+	# Go through autopoppers
+	for apt in auto_node.get_children():
+		# Change timer wait_time
+		apt.wait_time = Global.autopopper_timer
 
 func add_autopopper():
 	# Create timer and set up values
@@ -102,6 +109,7 @@ func update_labels():
 	# Update costs of upgrades
 	pop_val_cost_label.text = str(Global.pop_val_cost)
 	auto_up_label.text = str(Global.auto_cost)
+	auto_sp_up_label.text = str(Global.auto_sp_cost)
 	size_up_label.text = str(Global.grid_size_cost)
 	reload_up_label.text = str(Global.reload_cost)
 
@@ -115,14 +123,12 @@ func _on_exit_pressed() -> void:
 func _on_mute_pressed() -> void:
 	Global.toggle_mute()
 
-
 func _on_pop_up_buy_attempt(node: Variant) -> void:
 	# Check for enough available pops
 	if Global.pop_unspent >= Global.pop_val_cost:
 		node.anim_play_node.play("pop")
 		Global.buy_val_upgrade()
 		update_labels()
-
 
 func _on_auto_up_buy_attempt(node: Variant) -> void:
 	# Check for enough available pops
@@ -132,7 +138,6 @@ func _on_auto_up_buy_attempt(node: Variant) -> void:
 		update_labels()
 		update_autopopper()
 
-
 func _on_size_up_buy_attempt(node: Variant) -> void:
 	# Check for enough available pops
 	if Global.pop_unspent >= Global.grid_size_cost:
@@ -141,7 +146,6 @@ func _on_size_up_buy_attempt(node: Variant) -> void:
 		update_labels()
 		update_grid()
 
-
 func _on_reload_up_buy_attempt(node: Variant) -> void:
 	# Check for enough available pops
 	if Global.pop_unspent >= Global.reload_cost:
@@ -149,3 +153,11 @@ func _on_reload_up_buy_attempt(node: Variant) -> void:
 		Global.buy_reload_upgrade()
 		update_labels()
 		update_bubble_options()
+
+func _on_auto_sp_up_buy_attempt(node: Variant) -> void:
+	# Check for enough available pops
+	if Global.pop_unspent >= Global.auto_sp_cost:
+		node.anim_play_node.play("pop")
+		Global.buy_auto_sp_upgrade()
+		update_labels()
+		update_autopopper_timer()

@@ -254,18 +254,28 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.5
 
+[node name="debug_label" type="Label" parent="columns/right_panel1/pad"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+
 [node name="colour1" parent="columns/right_panel1" instance=ExtResource("2_2qk0i")]
-modulate = Color(1, 0, 0, 1)
+modulate = Color(0.980392, 0.666667, 0.666667, 1)
 layout_mode = 2
 sprite_frame = 12
 
 [node name="colour2" parent="columns/right_panel1" instance=ExtResource("2_2qk0i")]
-modulate = Color(0, 1, 0, 1)
+modulate = Color(0.666667, 0.980392, 0.666667, 1)
 layout_mode = 2
 sprite_frame = 12
 
 [node name="colour3" parent="columns/right_panel1" instance=ExtResource("2_2qk0i")]
-modulate = Color(1, 1, 0, 1)
+modulate = Color(0.980392, 0.980392, 0.666667, 1)
 layout_mode = 2
 sprite_frame = 12
 
@@ -285,17 +295,17 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 0.5
 
 [node name="colour4" parent="columns/right_panel2" instance=ExtResource("2_2qk0i")]
-modulate = Color(0, 0, 1, 1)
+modulate = Color(0.666667, 0.666667, 0.980392, 1)
 layout_mode = 2
 sprite_frame = 12
 
 [node name="colour5" parent="columns/right_panel2" instance=ExtResource("2_2qk0i")]
-modulate = Color(0, 1, 1, 1)
+modulate = Color(0.666667, 0.980392, 0.980392, 1)
 layout_mode = 2
 sprite_frame = 12
 
 [node name="colour6" parent="columns/right_panel2" instance=ExtResource("2_2qk0i")]
-modulate = Color(1, 0, 1, 1)
+modulate = Color(0.980392, 0.666667, 0.980392, 1)
 layout_mode = 2
 sprite_frame = 12
 
