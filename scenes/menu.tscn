@@ -255,6 +255,7 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 0.5
 
 [node name="debug_label" type="Label" parent="columns/right_panel1/pad"]
+custom_minimum_size = Vector2(100, 40)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

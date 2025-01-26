@@ -6,9 +6,10 @@ extends Control
 
 var code = ''
 const CORRECT_CODE = '466854'
+var web_play:bool = false
 
 func _ready() -> void:
-	_flash_message(OS.get_name().to_lower())
+	web_play = Global.os_name == 'web'
 	SignalBus.resize_screen.emit()
 
 func _process(_delta: float) -> void:
@@ -61,7 +62,10 @@ func _on_play_pressed() -> void:
 	change_scene('play')
 
 func _on_exit_pressed() -> void:
-	get_tree().quit()
+	if web_play:
+		get_tree().change_scene_to_file("res://scenes/menu.tscn")
+	else:
+		get_tree().quit()
 
 func _on_mute_pressed() -> void:
 	Global.toggle_mute()

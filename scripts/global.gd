@@ -3,6 +3,8 @@ extends Node
 
 # Control variables
 var mute_bool = false
+# System variables
+var os_name = ''
 # Bubble variables
 var pop_total:int = 0
 var pop_unspent:int = 0
@@ -21,6 +23,9 @@ var autopopper_counter = 0
 var autopopper_freq = 5.0
 var autopopper_timer = 10.0/autopopper_freq
 
+
+func _ready():
+	os_name = OS.get_name().to_lower()
 
 func toggle_mute():
 	mute_bool = !mute_bool

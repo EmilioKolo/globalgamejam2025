@@ -1,1 +1,7 @@
+res://scenes/game.tscn
 res://scenes/menu.tscn
+res://scenes/responsive_touch.tscn
+res://scripts/game.gd
+res://scripts/global.gd
+res://scripts/responsive_touch.gd
+res://scripts/menu.gd
