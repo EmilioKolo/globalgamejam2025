@@ -100,20 +100,28 @@ func shorten(n):
 		num = str(n)
 		mod = ''
 	# If the number is lower than 10m
-	elif len_n<=7:
+	elif len_n<=6:
 		num = str(n).substr(0,len_n-3)
+		if len(num)<=1:
+			num = num+'.'+str(n).substr(1,1)
 		mod = 'k'
 	# If the number is lower than 10b
-	elif len_n<=10:
+	elif len_n<=9:
 		num = str(n).substr(0,len_n-6)
+		if len(num)<=1:
+			num = num+'.'+str(n).substr(1,1)
 		mod = 'm'
 	# If the number is lower than 10t
-	elif len_n<=13:
+	elif len_n<=12:
 		num = str(n).substr(0,len_n-9)
+		if len(num)<=1:
+			num = num+'.'+str(n).substr(1,1)
 		mod = 'b'
 	# If the number is lower than 10q
-	elif len_n<=16:
+	elif len_n<=15:
 		num = str(n).substr(0,len_n-12)
+		if len(num)<=1:
+			num = num+'.'+str(n).substr(1,1)
 		mod = 't'
 	# If the number is bigger than 10q, I use scientific notation
 	else:

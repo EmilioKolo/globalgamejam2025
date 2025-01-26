@@ -113,8 +113,10 @@ func _disable():
 	enabled = false
 
 func _vibrate():
-	# Vibrate phone or handheld
-	Input.vibrate_handheld(200)
+	# Disable if the game is muted
+	if !Global.mute_bool:
+		# Vibrate phone or handheld
+		Input.vibrate_handheld(100)
 
 func _on_touch_button_pressed() -> void:
 	if enabled:
