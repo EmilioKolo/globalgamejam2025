@@ -291,12 +291,12 @@ size_flags_vertical = 3
 [node name="color1" parent="columns/right_panel/colors1" instance=ExtResource("2_ykisa")]
 modulate = Color(0.980392, 0.666667, 0.666667, 1)
 layout_mode = 2
-sprite_frame = 12
+sprite_frame = 24
 
 [node name="color4" parent="columns/right_panel/colors1" instance=ExtResource("2_ykisa")]
 modulate = Color(0.666667, 0.666667, 0.980392, 1)
 layout_mode = 2
-sprite_frame = 12
+sprite_frame = 24
 
 [node name="colors2" type="HBoxContainer" parent="columns/right_panel"]
 layout_mode = 2
@@ -305,12 +305,12 @@ size_flags_vertical = 3
 [node name="color2" parent="columns/right_panel/colors2" instance=ExtResource("2_ykisa")]
 modulate = Color(0.666667, 0.980392, 0.666667, 1)
 layout_mode = 2
-sprite_frame = 12
+sprite_frame = 24
 
 [node name="color5" parent="columns/right_panel/colors2" instance=ExtResource("2_ykisa")]
 modulate = Color(0.666667, 0.980392, 0.980392, 1)
 layout_mode = 2
-sprite_frame = 12
+sprite_frame = 24
 
 [node name="colors3" type="HBoxContainer" parent="columns/right_panel"]
 layout_mode = 2
@@ -319,12 +319,12 @@ size_flags_vertical = 3
 [node name="color3" parent="columns/right_panel/colors3" instance=ExtResource("2_ykisa")]
 modulate = Color(0.980392, 0.980392, 0.666667, 1)
 layout_mode = 2
-sprite_frame = 12
+sprite_frame = 24
 
 [node name="color6" parent="columns/right_panel/colors3" instance=ExtResource("2_ykisa")]
 modulate = Color(0.980392, 0.666667, 0.980392, 1)
 layout_mode = 2
-sprite_frame = 12
+sprite_frame = 24
 
 [node name="autopop_timer" type="Timer" parent="."]
 wait_time = 0.1

@@ -67,14 +67,19 @@ func scale_button():
 
 func update_initial():
 	# Define frame number
-	if sprite_frame<=16 and sprite_frame>=12:
-		if !option_button:
-			reload_timer = Global.reload_timer
-		sprite_frame = randi_range(12,16)
+	update_frame_number()
 	# Do regular button update
 	update_button()
 	# Update sprite frame
 	update_sprite_frame()
+
+func update_frame_number():
+	if sprite_frame<=16 and sprite_frame>=12:
+		if !option_button:
+			reload_timer = Global.reload_timer
+		sprite_frame = randi_range(12,16)
+	if sprite_frame<=28 and sprite_frame>=24:
+		sprite_frame = randi_range(24,28)
 
 func update_button():
 	# Update mute if it is a mute button
@@ -99,6 +104,9 @@ func update_sprite_frame():
 
 func _enable():
 	enabled = true
+	# Define frame number
+	update_frame_number()
+	# Update frame
 	update_sprite_frame()
 
 func _disable():

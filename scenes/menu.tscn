@@ -268,17 +268,17 @@ theme_override_font_sizes/font_size = 40
 [node name="colour1" parent="columns/right_panel1" instance=ExtResource("2_2qk0i")]
 modulate = Color(0.980392, 0.666667, 0.666667, 1)
 layout_mode = 2
-sprite_frame = 12
+sprite_frame = 24
 
 [node name="colour2" parent="columns/right_panel1" instance=ExtResource("2_2qk0i")]
 modulate = Color(0.666667, 0.980392, 0.666667, 1)
 layout_mode = 2
-sprite_frame = 12
+sprite_frame = 24
 
 [node name="colour3" parent="columns/right_panel1" instance=ExtResource("2_2qk0i")]
 modulate = Color(0.980392, 0.980392, 0.666667, 1)
 layout_mode = 2
-sprite_frame = 12
+sprite_frame = 24
 
 [node name="right_panel2" type="VBoxContainer" parent="columns"]
 layout_mode = 2
@@ -298,17 +298,17 @@ size_flags_stretch_ratio = 0.5
 [node name="colour4" parent="columns/right_panel2" instance=ExtResource("2_2qk0i")]
 modulate = Color(0.666667, 0.666667, 0.980392, 1)
 layout_mode = 2
-sprite_frame = 12
+sprite_frame = 24
 
 [node name="colour5" parent="columns/right_panel2" instance=ExtResource("2_2qk0i")]
 modulate = Color(0.666667, 0.980392, 0.980392, 1)
 layout_mode = 2
-sprite_frame = 12
+sprite_frame = 24
 
 [node name="colour6" parent="columns/right_panel2" instance=ExtResource("2_2qk0i")]
 modulate = Color(0.980392, 0.666667, 0.980392, 1)
 layout_mode = 2
-sprite_frame = 12
+sprite_frame = 24
 
 [connection signal="pressed" from="columns/left_panel1/button1" to="." method="_on_button_1_pressed"]
 [connection signal="pressed" from="columns/left_panel1/button2" to="." method="_on_button_2_pressed"]
