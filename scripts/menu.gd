@@ -31,8 +31,8 @@ func button_clicked(n):
 
 func enable_cheats():
 	_flash_message('Cheats enabled')
-	Global.pop_total = 999999999
-	Global.pop_unspent = 999999999
+	Global.pop_total += 999999999
+	Global.pop_unspent += 999999999
 
 func change_color(newcolor_base, newcolor_accent):
 	RenderingServer.set_default_clear_color(newcolor_base)

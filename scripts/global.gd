@@ -89,7 +89,7 @@ func buy_reload_upgrade():
 	# Increase reload_cost
 	reload_cost = cost_increase(reload_cost)
 
-func shorten(n):
+func shorten(n, decimals=4):
 	# Define number and modifier variables
 	var num = ''
 	var mod = ''
@@ -102,30 +102,30 @@ func shorten(n):
 	# If the number is lower than 10m
 	elif len_n<=6:
 		num = str(n).substr(0,len_n-3)
-		if len(num)<=2:
-			num = num+'.'+str(n).substr(1,3-len(num))
+		if len(num)<decimals:
+			num = num+'.'+str(n).substr(len(num),decimals-len(num))
 		mod = 'k'
 	# If the number is lower than 10b
 	elif len_n<=9:
 		num = str(n).substr(0,len_n-6)
-		if len(num)<=2:
-			num = num+'.'+str(n).substr(1,3-len(num))
+		if len(num)<decimals:
+			num = num+'.'+str(n).substr(len(num),decimals-len(num))
 		mod = 'm'
 	# If the number is lower than 10t
 	elif len_n<=12:
 		num = str(n).substr(0,len_n-9)
-		if len(num)<=2:
-			num = num+'.'+str(n).substr(1,3-len(num))
+		if len(num)<decimals:
+			num = num+'.'+str(n).substr(len(num),decimals-len(num))
 		mod = 'b'
 	# If the number is lower than 10q
 	elif len_n<=15:
 		num = str(n).substr(0,len_n-12)
-		if len(num)<=2:
-			num = num+'.'+str(n).substr(1,3-len(num))
+		if len(num)<decimals:
+			num = num+'.'+str(n).substr(len(num),decimals-len(num))
 		mod = 't'
 	# If the number is bigger than 10q, I use scientific notation
 	else:
-		num = str(n)[0]+'.'+str(n).substr(1,4)
+		num = str(n)[0]+'.'+str(n).substr(1,decimals)
 		mod = 'e'+str(len_n-1)
 	var ret = str(num)+str(mod)
 	return ret

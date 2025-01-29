@@ -1,14 +1,20 @@
 extends Control
 
-
-@onready var bubble_grid_node = $columns/game_panel/bubble_grid
-@onready var pops_label = $columns/left_panel/pop_counter/pops
-@onready var total_label = $columns/left_panel/pop_counter_total/pops
+# Left panel
+@onready var pops_label = $columns/left_panel/pops/pop_counter/pops
+@onready var total_label = $columns/left_panel/pops/pop_counter_total/pops
+@onready var pop_profit_label = $columns/left_panel/stats/pop_value/pop_profit/pop_profit
+@onready var pop_reload_label = $columns/left_panel/stats/pop_value/reload_time/pop_profit
+@onready var autopop_label = $columns/left_panel/stats/autopop/autopop_counter/autopop_counter
+@onready var autopop_reload_label = $columns/left_panel/stats/autopop/autopop_reload/autopop_reload
 @onready var pop_val_cost_label = $columns/left_panel/pop_upgrade/cost
 @onready var auto_up_label = $columns/left_panel/auto_upgrade/cost
 @onready var auto_sp_up_label = $columns/left_panel/auto_sp_upgrade/cost
 @onready var size_up_label = $columns/left_panel/size_upgrade/cost
 @onready var reload_up_label = $columns/left_panel/reload_upgrade/cost
+# Right panel
+@onready var bubble_grid_node = $columns/right_panel/bubble_grid
+# Outside of panels
 @onready var auto_node = $autopoppers
 
 # Autopopper variables
@@ -40,6 +46,17 @@ func update_autopopper():
 		add_autopopper()
 		# Count the new autopopper
 		curr_autopoppers += 1
+		# Await to add one more autopopper
+		var timer = Timer.new()
+		timer.wait_time = 0.05
+		timer.one_shot = true
+		# Start timer
+		timer.autostart = true
+		# Add timer as child to self
+		self.add_child(timer)
+		await timer.timeout
+		timer.queue_free()
+		
 
 func update_autopopper_timer():
 	# Go through autopoppers
@@ -112,6 +129,11 @@ func update_labels():
 	auto_sp_up_label.text = Global.shorten(Global.auto_sp_cost)
 	size_up_label.text = Global.shorten(Global.grid_size_cost)
 	reload_up_label.text = Global.shorten(Global.reload_cost)
+	# Update stats
+	pop_profit_label.text = str(Global.pop_value)
+	pop_reload_label.text = str(Global.reload_timer).substr(0,4)
+	autopop_label.text = str(Global.autopopper_counter)
+	autopop_reload_label.text = str(Global.autopopper_timer).substr(0,4)
 
 func back_to_menu():
 	get_tree().change_scene_to_file("res://scenes/menu.tscn")

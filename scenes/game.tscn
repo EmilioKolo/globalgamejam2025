@@ -21,52 +21,212 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
 
+[node name="pad" type="Control" parent="columns"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
 [node name="left_panel" type="VBoxContainer" parent="columns"]
 layout_mode = 2
-size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
+alignment = 1
 
-[node name="pop_counter" type="HBoxContainer" parent="columns/left_panel"]
+[node name="pad" type="Control" parent="columns/left_panel"]
 layout_mode = 2
 size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
 
-[node name="Label" type="Label" parent="columns/left_panel/pop_counter"]
+[node name="pops" type="HBoxContainer" parent="columns/left_panel"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 36
-text = " Pops: "
-vertical_alignment = 1
+alignment = 1
 
-[node name="pops" type="Label" parent="columns/left_panel/pop_counter"]
-custom_minimum_size = Vector2(100, 40)
+[node name="pop_counter" type="VBoxContainer" parent="columns/left_panel/pops"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+alignment = 1
+
+[node name="Label" type="Label" parent="columns/left_panel/pops/pop_counter"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Unspent pops:"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="pops" type="Label" parent="columns/left_panel/pops/pop_counter"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="pop_counter_total" type="VBoxContainer" parent="columns/left_panel/pops"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+alignment = 1
+
+[node name="Label" type="Label" parent="columns/left_panel/pops/pop_counter_total"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Total pops:"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="pops" type="Label" parent="columns/left_panel/pops/pop_counter_total"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="pad4" type="Control" parent="columns/left_panel"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="stats" type="HBoxContainer" parent="columns/left_panel"]
+layout_mode = 2
+alignment = 1
+
+[node name="pop_value" type="VBoxContainer" parent="columns/left_panel/stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="pop_profit" type="HBoxContainer" parent="columns/left_panel/stats/pop_value"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+theme_override_constants/separation = 10
+alignment = 2
+
+[node name="Label" type="Label" parent="columns/left_panel/stats/pop_value/pop_profit"]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "Pop profit: "
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="pop_profit" type="Label" parent="columns/left_panel/stats/pop_value/pop_profit"]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 2
+size_flags_horizontal = 8
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 text = "0"
 vertical_alignment = 1
 autowrap_mode = 1
 
-[node name="pop_counter_total" type="HBoxContainer" parent="columns/left_panel"]
+[node name="reload_time" type="HBoxContainer" parent="columns/left_panel/stats/pop_value"]
 layout_mode = 2
 size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+theme_override_constants/separation = 10
+alignment = 2
 
-[node name="Label" type="Label" parent="columns/left_panel/pop_counter_total"]
+[node name="Label" type="Label" parent="columns/left_panel/stats/pop_value/reload_time"]
+custom_minimum_size = Vector2(260, 0)
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 36
-text = " Total: "
+text = "Reload time: "
+horizontal_alignment = 2
 vertical_alignment = 1
+autowrap_mode = 2
 
-[node name="pops" type="Label" parent="columns/left_panel/pop_counter_total"]
+[node name="pop_profit" type="Label" parent="columns/left_panel/stats/pop_value/reload_time"]
 custom_minimum_size = Vector2(100, 40)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 8
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 text = "0"
 vertical_alignment = 1
 autowrap_mode = 1
+
+[node name="autopop" type="VBoxContainer" parent="columns/left_panel/stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="autopop_counter" type="HBoxContainer" parent="columns/left_panel/stats/autopop"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+theme_override_constants/separation = 10
+alignment = 2
+
+[node name="Label" type="Label" parent="columns/left_panel/stats/autopop/autopop_counter"]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "Autopoppers: "
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="autopop_counter" type="Label" parent="columns/left_panel/stats/autopop/autopop_counter"]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "0"
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="autopop_reload" type="HBoxContainer" parent="columns/left_panel/stats/autopop"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+theme_override_constants/separation = 10
+alignment = 2
+
+[node name="Label" type="Label" parent="columns/left_panel/stats/autopop/autopop_reload"]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "Autopop time: "
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="autopop_reload" type="Label" parent="columns/left_panel/stats/autopop/autopop_reload"]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "0"
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="pad2" type="Control" parent="columns/left_panel"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
 
 [node name="pop_upgrade" type="HBoxContainer" parent="columns/left_panel"]
 layout_mode = 2
@@ -79,7 +239,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
-text = " Profit"
+text = "Profit"
 horizontal_alignment = 2
 vertical_alignment = 1
 autowrap_mode = 2
@@ -112,7 +272,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
-text = " Auto"
+text = "Auto"
 horizontal_alignment = 2
 vertical_alignment = 1
 autowrap_mode = 2
@@ -145,7 +305,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
-text = " Auto speed"
+text = "Auto speed"
 horizontal_alignment = 2
 vertical_alignment = 1
 autowrap_mode = 2
@@ -211,7 +371,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
-text = " Reload"
+text = "Reload"
 horizontal_alignment = 2
 vertical_alignment = 1
 autowrap_mode = 2
@@ -233,43 +393,30 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 1
 
-[node name="game_panel" type="Control" parent="columns"]
+[node name="pad3" type="Control" parent="columns/left_panel"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="pad3" type="Control" parent="columns"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-
-[node name="bubble_grid" type="GridContainer" parent="columns/game_panel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-columns = 5
-
-[node name="bubble1" parent="columns/game_panel/bubble_grid" instance=ExtResource("2_ykisa")]
-layout_mode = 2
-sprite_frame = 12
-option_button = false
-
-[node name="bubble2" parent="columns/game_panel/bubble_grid" instance=ExtResource("2_ykisa")]
-layout_mode = 2
-sprite_frame = 12
-option_button = false
-
-[node name="bubble3" parent="columns/game_panel/bubble_grid" instance=ExtResource("2_ykisa")]
-layout_mode = 2
-sprite_frame = 12
-option_button = false
+size_flags_stretch_ratio = 0.1
 
 [node name="right_panel" type="VBoxContainer" parent="columns"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 2.0
+size_flags_stretch_ratio = 5.0
 
 [node name="exit_mute" type="HBoxContainer" parent="columns/right_panel"]
 layout_mode = 2
 size_flags_vertical = 3
+alignment = 2
+
+[node name="pad" type="Control" parent="columns/right_panel/exit_mute"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
 
 [node name="mute" parent="columns/right_panel/exit_mute" instance=ExtResource("2_ykisa")]
 layout_mode = 2
@@ -279,52 +426,41 @@ sprite_frame = 8
 layout_mode = 2
 sprite_frame = 7
 
-[node name="pad" type="Control" parent="columns/right_panel"]
+[node name="pad2" type="Control" parent="columns/right_panel"]
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 0.5
+size_flags_stretch_ratio = 0.2
 
-[node name="colors1" type="HBoxContainer" parent="columns/right_panel"]
+[node name="bubble_grid" type="GridContainer" parent="columns/right_panel"]
 layout_mode = 2
 size_flags_vertical = 3
+size_flags_stretch_ratio = 5.0
+columns = 5
 
-[node name="color1" parent="columns/right_panel/colors1" instance=ExtResource("2_ykisa")]
-modulate = Color(0.980392, 0.666667, 0.666667, 1)
+[node name="bubble1" parent="columns/right_panel/bubble_grid" instance=ExtResource("2_ykisa")]
 layout_mode = 2
-sprite_frame = 24
+sprite_frame = 12
+option_button = false
 
-[node name="color4" parent="columns/right_panel/colors1" instance=ExtResource("2_ykisa")]
-modulate = Color(0.666667, 0.666667, 0.980392, 1)
+[node name="bubble2" parent="columns/right_panel/bubble_grid" instance=ExtResource("2_ykisa")]
 layout_mode = 2
-sprite_frame = 24
+sprite_frame = 12
+option_button = false
 
-[node name="colors2" type="HBoxContainer" parent="columns/right_panel"]
+[node name="bubble3" parent="columns/right_panel/bubble_grid" instance=ExtResource("2_ykisa")]
 layout_mode = 2
-size_flags_vertical = 3
+sprite_frame = 12
+option_button = false
 
-[node name="color2" parent="columns/right_panel/colors2" instance=ExtResource("2_ykisa")]
-modulate = Color(0.666667, 0.980392, 0.666667, 1)
-layout_mode = 2
-sprite_frame = 24
-
-[node name="color5" parent="columns/right_panel/colors2" instance=ExtResource("2_ykisa")]
-modulate = Color(0.666667, 0.980392, 0.980392, 1)
-layout_mode = 2
-sprite_frame = 24
-
-[node name="colors3" type="HBoxContainer" parent="columns/right_panel"]
+[node name="pad3" type="Control" parent="columns/right_panel"]
 layout_mode = 2
 size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
 
-[node name="color3" parent="columns/right_panel/colors3" instance=ExtResource("2_ykisa")]
-modulate = Color(0.980392, 0.980392, 0.666667, 1)
+[node name="pad2" type="Control" parent="columns"]
 layout_mode = 2
-sprite_frame = 24
-
-[node name="color6" parent="columns/right_panel/colors3" instance=ExtResource("2_ykisa")]
-modulate = Color(0.980392, 0.666667, 0.980392, 1)
-layout_mode = 2
-sprite_frame = 24
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
 
 [node name="autopop_timer" type="Timer" parent="."]
 wait_time = 0.1

@@ -1,11 +1,11 @@
+Control
+VBoxContainer
+HBoxContainer
+BoxContainer
 Camera2D
 Label
-Control
 Sprite2D
 AnimatedSprite2D
 TouchScreenButton
 MarginContainer
 ColorRect
-VBoxContainer
-BoxContainer
-HBoxContainer
