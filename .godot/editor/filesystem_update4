@@ -1,6 +1,1 @@
 res://scenes/game.tscn
-res://scripts/global.gd
-res://scenes/menu.tscn
-res://scenes/responsive_touch.tscn
-res://scripts/menu.gd
-res://scripts/game.gd
